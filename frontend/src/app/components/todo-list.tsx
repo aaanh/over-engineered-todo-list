@@ -1,4 +1,4 @@
-import type { TodoList } from "@/app/types";
+import type { TodoList, TodoListItem } from "@/app/types";
 import {
   Card,
   CardContent,
@@ -17,7 +17,7 @@ export default function TodoList({ list }: { list: TodoList }) {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        {list.items?.map((item, idx) => (
+        {list.items?.map((item: TodoListItem, idx: number) => (
           <div
             key={`${item.itemName}-${idx}`}
             className="gap-2 grid grid-cols-[2rem_1fr]"
